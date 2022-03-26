@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.stepdef.RunnerTest">
+      <class name="com.stepdef.ecomLoginPageStepDef">
         <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
+          <include name="user_is_redirected_to_login_page"/>
+          <include name="user_clicks_on_login"/>
+          <include name="user_is_on_main_login_page"/>
         </methods>
-      </class> <!-- com.stepdef.RunnerTest -->
+      </class> <!-- com.stepdef.ecomLoginPageStepDef -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,5 +1,7 @@
 package com.qatest.pageobject;
 
+import javax.naming.CommunicationException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -40,9 +42,11 @@ public class ecomLoginPage extends TestBase implements launchBrowser {
 	}
 
 	public void loginintoApp() throws InterruptedException {
-		
+		commonUtilities.HighlightElement(emial_login);
 		commonUtilities.sendTextToField(emial_login, "ankushsingh712@gmail.com");
+		commonUtilities.HighlightElement(password_login);
 		commonUtilities.sendTextToField(password_login, "India@123");
+		commonUtilities.HighlightElement(login_button);
 		commonUtilities.click(login_button);
 		Thread.sleep(5000);
 	}
@@ -50,6 +54,7 @@ public class ecomLoginPage extends TestBase implements launchBrowser {
 	public void verifyLoginPageDisplayed() {
 		commonUtilities.waitTillPageLoad();
 		//String loginText= commonUtilities.getObjectText(Acount_text_btm);
+		commonUtilities.HighlightElement(Acount_text_btm);
 		AssertUtils.assertTextMatches(Acount_text_btm,"ACCOUNT");
 	}
 

@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,6 +25,7 @@ public class commonUtilities extends TestBase {
 	}
 
 	public static void click(WebElement element) {
+		
 		WebDriverWait wait = new WebDriverWait(TestBase.driver, 20, 5);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		element.click();
@@ -38,5 +40,17 @@ public class commonUtilities extends TestBase {
 		WebDriverWait wait = new WebDriverWait(TestBase.driver, 20, 5);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		element.getText();
+	}
+	
+		
+	public static void HighlightElement(WebElement elm) {  
+        try {  
+             JavascriptExecutor js = (JavascriptExecutor) driver;  
+             js.executeScript("arguments[0].style.border='4px groove red'", elm);  
+             Thread.sleep(1000);  
+             js.executeScript("arguments[0].style.border=''", elm);  
+        } catch (Exception e) {  
+             System.out.println(e);  
+        } 
 	}
 }
