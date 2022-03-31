@@ -1,2 +1,2 @@
-cd C:\Windows\System32\cmd.exe
+cd C:\test_auto
 mvn test
